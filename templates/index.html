@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="" >
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--Meta Responsive tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/">
+    <link rel="stylesheet" href="../assets/css/quicksand.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--Animate CSS-->
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <!--Chartist CSS-->
+    <link rel="stylesheet" href="../assets/css/chartist.min.css">
+    <!--Morris Css-->
+    <link rel="stylesheet" href="../assets/css/morris.css">
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    ></script>
+
+    <title>IoTMonitor-WQ</title>
+  </head>
+  <body>
+    <!--Page loader-->
+    <div class="loader-wrapper">
+        <div class="loader-circle">
+            <div class="loader-wave"></div>
+        </div>
+    </div>
+    <!--Page loader-->
+    
+    <!--Page Wrapper-->
+
+    <div class="container-fluid">
+
+        <!--Header-->
+        <div class="row header shadow-sm">
+            
+            <!--Logo-->
+            <div class="col-sm-3 pl-0 text-center header-logo">
+               <div class="bg-theme mr-3 pt-3 pb-2 mb-0">
+                    <h3 class="logo"><a href="#" class="text-secondary logo">IoTMonitor-WQ</a></h3>
+               </div>
+            </div>
+            <!--Logo-->
+
+            <!--Header Menu-->
+            <div class="col-sm-9 header-menu pt-2 pb-0">
+                <div class="row">
+                    <!--Menu Icons-->
+                    <div class="col-sm-4 col-8 pl-0">
+                        <!--Toggle sidebar-->
+                        <span class="menu-icon" onclick="toggle_sidebar()">
+                            <span id="sidebar-toggle-btn"></span>
+                        </span>
+                        <!--Toggle sidebar-->
+                        <!--Notification icon-->
+                        <div class="menu-icon">
+                            <a class="" href="#" onclick="toggle_dropdown(this); return false" role="button" class="dropdown-toggle">
+                                <i class="fa fa-bell"></i>
+                                <span class="badge badge-danger">5</span>
+                            </a>
+                            <div class="dropdown dropdown-left bg-white shadow border">
+                                <a class="dropdown-item" href="#"><strong>Notifications</strong></a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <div class="media">
+                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-primary">
+                                            <i class="fa fa-bookmark"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0"><strong>Alerts</strong></h6>
+                                            <p>Ph Hight</p>
+                                            <small class="text-success">10.5</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <div class="media">
+                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
+                                            <i class="fa fa-link"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0"><strong>Events</strong></h6>
+                                            <p>Date</p>
+                                            <small class="text-success">12/08/2021</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <div class="media">
+                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-warning">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0"><strong>Personnel</strong></h6>
+                                            <p>New employee arrival</p>
+                                            <small class="text-success">09:23am</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-center link-all" href="#">See all notifications ></a>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!--Menu Icons-->
+
+                    <!--Search box and avatar-->
+                    <div class="col-sm-8 col-4 text-right flex-header-menu justify-content-end">
+                        <div class="search-rounded mr-3">
+                            <input type="text" class="form-control search-box" placeholder="Enter keywords.." />
+                        </div>
+                        <div class="mr-4">
+                            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../assets/img/Telematica.bmp" alt="Adam" class="rounded-circle" width="40px" height="40px">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#"><i class="fa fa-user pr-2"></i> Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i> Tasks</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-book pr-2"></i> Project</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-power-off pr-2"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Search box and avatar-->
+                </div>    
+            </div>
+            <!--Header Menu-->
+        </div>
+        <!--Header-->
+
+        <!--Main Content-->
+
+        <div class="row main-content">
+            <!--Sidebar left-->
+            <div class="col-sm-3 col-xs-6 sidebar pl-0">
+                <div class="inner-sidebar mr-3">
+                    <!--Image Avatar-->
+                    <div class="avatar text-center">
+                        <img src="../assets/img/Foto-Perfil.jpeg" alt="" class="rounded-circle" />
+                        <p><strong>Telematics Research Group</strong></p>                        
+                    </div>
+                    <!--Image Avatar-->
+
+                    <!--Sidebar Navigation Menu-->
+                    <div class="sidebar-menu-container">
+                        <ul class="sidebar-menu mt-4 mb-4">
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('dashboard'); return false"><i class="fa fa-dashboard mr-3"> </i>
+                                    <span class="none">Dashboard</span>
+                                </a>                            
+                            </li>       
+                
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
+                                    <span class="none">Report</span>
+                                </a>
+                                <ul class="children" id="tables">                                    
+                                    <li class="child"><a href="datatable.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Datatables</a></li>                                    
+                                </ul>                    
+                            </li>
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
+                                    <span class="none">Charts </span>
+                                </a>            
+                            </li>
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('charts'); return false" class="fas fa-cogs "><i class="fa  mr-3"></i>
+                                    <span class="none">Settings</span>
+                                </a>            
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!--Sidebar Naigation Menu-->
+                </div>
+            </div>
+            <!--Sidebar left-->
+
+            <!--Content right-->
+            <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                <h5 class="mb-3" ><strong>Dashboard</strong></h5>
+                
+                <!--Dashboard widget-->
+                <div class="mt-1 mb-3 button-container">
+                    <div class="row pl-0">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2"><small><strong>Ph</strong></small></h5>
+                                    <h1>7.4</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Ph"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2"><small><strong>Dissolved Oxygen</strong></small></h5>
+                                    <h1>345</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Dissolved"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2"><small><strong>Conductivity</strong></small></h5>
+                                    <h1>321.3</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Conductivity"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2"><small><strong>Temperature</strong></small></h5>
+                                    <h1>22.3 °C</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Temperature"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2"><small><strong>Humidity</strong></small></h5>
+                                    <h1>60 %</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Humidity"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2 text-green"><small><strong>Flow</strong></small></h5>
+                                    <h1>$2.05 l/min</h1>
+                                </div>
+                                <div class="align-bottom">
+                                    <span id="Flow"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--/Dashboard widget-->
+
+                <div class="row mt-3">
+                    <div class="col-sm-12s col-md-8">
+                        <!--Analytics-->
+                        <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
+                            <h6 class="mb-3">Analytics</h6><hr>                            
+                            <canvas id="orderRevenue" class="orderRevenue" height="120px"></canvas>                            
+                        </div>
+                        <!--/Analytics-->
+                    </div>
+                
+
+                    <div class="col-sm-12 col-md-4">                       
+                            <!--Google world-->
+                            <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
+                                <h6 class="mb-2">Reference point</h6>                                
+                                <div id="google_world_map" style="width: 100%; height: 300px"></div>
+                            </div>                       
+                    </div>
+                </div>
+
+                <!--Custom cards section-->
+                <div class="row">
+                    <!--Visitors statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <h5 class="mb-0 mt-2"><small>Voltaje</small></h5>
+                                <h2>7,5 V</h2>
+                            </div>
+
+                            <svg viewBox="0 0 36 25" class="circular-chart blue">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="30, 60"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf242;</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--/Visitors statistics card-->
+
+                    <!--Transaction statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <h5 class="mb-0 mt-2"><small>Current</small></h5>
+                                <h2>0.372 mA</h2>
+                            </div>
+                            
+                            <svg viewBox="0 0 36 25" class="circular-chart red">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="10, 100"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf242</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--/Transaction statistics card-->
+
+                    <!--Tasks statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <h5 class="mb-0 mt-2"><small>Watts</small></h5>
+                                <h2>2.79 W</h2>
+                            </div>
+
+                            <svg viewBox="0 0 36 25" class="circular-chart green">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="40, 60"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf242;</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--Transaction statistics card-->
+                </div>
+                             
+
+                <!--Footer-->
+                <div class="row mt-5 mb-4 footer">
+                    <div class="col-sm-8">
+                        <span>&copy; All rights reserved 2021 designed by <a class="text-theme" href="#">Cristian Cárdenas - Carlos Gonzalez</a></span>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <a href="#" class="ml-2">Contact Us</a>
+                        <a href="#" class="ml-2">Support</a>
+                    </div>
+                </div>
+                <!--Footer-->
+
+            </div>
+        </div>
+
+        <!--Main Content-->
+
+    </div>
+
+    <!--Page Wrapper-->
+
+    <!-- Page JavaScript Files-->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <!--Popper JS-->
+    <script src="../assets/js/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!--Sweet alert JS-->
+    <script src="../assets/js/sweetalert.js"></script>
+    <!--Progressbar JS-->
+    <script src="../assets/js/progressbar.min.js"></script>
+    <!--Flot.JS-->
+    <script src="../assets/js/charts/jquery.flot.min.js"></script>
+    <script src="../assets/js/charts/jquery.flot.pie.min.js"></script>
+    <script src="../assets/js/charts/jquery.flot.categories.min.js"></script>
+    <script src="../assets/js/charts/jquery.flot.stack.min.js"></script>
+    <!--Sparkline-->
+    <script src="../assets/js/charts/sparkline.min.js"></script>
+    <!--Morris.JS-->
+    <script src="../assets/js/charts/raphael.min.js"></script>
+    <script src="../assets/js/charts/morris.js"></script>
+    <!--Chart JS-->
+    <script src="../assets/js/charts/chart.min.js"></script>
+    <!--Chartist JS-->
+    <script src="../assets/js/charts/chartist.min.js"></script>
+    <script src="../assets/js/charts/chartist-data.js"></script>
+    <script src="../assets/js/charts/demo.js"></script>
+    <script src="../assets/js/jquery.nice-select.min.js"></script>
+
+    <!--Maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    <script src="../assets/js/maps/google-map-data.js"></script>
+
+    <!--Custom Js Script-->
+    <script src="../assets/js/custom.js"></script>
+  </body>
+</html>
